@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Excel ManageIT</title>
+
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendo/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/kendo")
+    @Scripts.Render("~/Scripts/jquery.metisMenu.js")
+    @Scripts.Render("~/Scripts/bootstrap.min.js")
+    @*@Scripts.Render("~/Scripts/app.js")*@
+    @Scripts.Render("~/Scripts/kendo/kendo.all.min.js")
+    @Scripts.Render("~/Scripts/kendo/jquery.min.js") 
+
+
+
+  
+
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/Content/masterLayout.css" rel="stylesheet" />
+    <link href="~/Content/app.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
+  
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="topbar" class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html"><img alt="ExcelManageIT" src="~/images/ManageIT_Logo_260x60.jpg" /></a>
+            </div><div style="color: white;padding: 15px 50px 5px 50px;float: right;font-size: 14px;">
+                Welcome @Session["UserID"]. &nbsp; @*Last access : 03 October 2015*@ &nbsp;
+                      <a href="@Url.Action("Logout", "Home")" class="btn btn-danger square-btn-adjust">Logout</a> <!--<input class="themeChooser" value="default" />-->
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="home.html"><i class="fa fa-home fa-3x"></i> Home</a>
+                    </li>
+                    <li>
+                        <a id="userLink" href="#"><i class="fa fa-users fa-3x"></i>Users<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="@Url.Action("CreateUser","User")" id="CreateuserLink">Create User</a>
+                            </li>
+                            <li>
+                                <a href="#">View User</a>
+                            </li>
+                            <li>
+                                <a href="#">Modify User</a>
+                            </li>
+                          
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="LeadLink" href="#"><i class="fa fa-child fa-3x"></i>Leads<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="@Url.Action("CreateLead","Lead")" id="CreateLeadLink" >CreateLead</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("displayLead","Lead")" id="displayLeadLink">ViewLead</a>
+                            </li>
+                            <li>
+                                <a href="#">Modify Lead</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("UploadLead","Lead")" id="LeadLink">UploadLead</a>
+                            </li>
+                        </ul>
+                        </li>
+                    <li>
+                        <a href="#"><i class="fa fa-user fa-3x"></i>Contacts<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Create Contact</a>
+                            </li>
+                            <li>
+                                <a href="viewContact.html">View Contact</a>
+                            </li>
+                            <li>
+                                <a href="#">Modify Contact</a>
+                            </li>
+
+                        </ul>
+                        
+                    <li>
+                    <li>
+                        <a href="@Url.Action("CreateOpportunities", "Opportunities")" id="OpportunitiesLink"><i class="fa fa-space-shuttle fa-3x"></i> Opportunities</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("CreateCustomer", "Customers")"><i class="fa fa-space-shuttle fa-3x"></i> Customers</a>
+                    </li>
+                    <li>
+                        <a href="table.html"><i class="fa fa-cubes fa-3x"></i> Product Management</a>
+                    </li>
+                    <li>
+                        <a href="form.html"><i class="fa fa-paper-plane-o fa-3x"></i> Campaign Management </a>
+                    </li>
+                    <li>
+                        <a href="form.html"><i class="fa fa-edit fa-3x"></i> Tasks and Meetings </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        @RenderBody()
+    </div>
+
+        @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>*@
+            @RenderSection("scripts", required: false)
+
+
+
+
+
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c963c27b-caf5-41dc-9b37-4b6c5e332a58" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://internservice.ddns.net/ExcelManageITService.ManageITService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExcelManageITService.xsd" MetadataType="Schema" ID="5e483cae-c505-4ff8-9339-4a98f4a8d254" SourceId="1" SourceUrl="http://internservice.ddns.net/ExcelManageITService.ManageITService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExcelManageITService1.xsd" MetadataType="Schema" ID="6605af15-c8d2-413e-8b6e-c7a24d647422" SourceId="1" SourceUrl="http://internservice.ddns.net/ExcelManageITService.ManageITService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ManageITService.wsdl" MetadataType="Wsdl" ID="eea6fc8a-e849-468b-b37c-b75f85a86e81" SourceId="1" SourceUrl="http://internservice.ddns.net/ExcelManageITService.ManageITService.svc?wsdl" />
+    <MetadataFile FileName="ExcelManageITService.disco" MetadataType="Disco" ID="a2abd4f1-5bcf-4b07-98b2-42bf16fc602e" SourceId="1" SourceUrl="http://internservice.ddns.net/ExcelManageITService.ManageITService.svc?disco" />
+    <MetadataFile FileName="ExcelManageITService2.xsd" MetadataType="Schema" ID="fba37bb9-71cc-4503-a558-43171bbfe0c7" SourceId="1" SourceUrl="http://internservice.ddns.net/ExcelManageITService.ManageITService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

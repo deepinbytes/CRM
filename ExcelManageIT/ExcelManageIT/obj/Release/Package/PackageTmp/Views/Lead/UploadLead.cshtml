@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Lead";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Upload Lead</h2>
+
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <hr />
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-sm-4">
+                        <a href="#">Download .xlsx template</a>
+                    </div>
+
+                    <br><br>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Choose File to Upload</label>
+                        <div>
+                            <input type="file" id="fileUpload" accept=".csv" value=""  />
+
+                        </div>
+                    </div>
+
+                   
+
+
+
+                </div>
+            </div>
+            <!--End Row-->
+            <br><br>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label>How to Handle Duplicate Records?</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked />Skip
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />Overwrite
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" />Clone
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Row-->
+            <br><br>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <center> <a class="btn btn-primary btn-lg" id="btnUpload" href="#">Submit</a> </center>
+                </div>
+            </div>
+            <!--End Row-->
+
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                
+                $("#btnUpload").click(function () {
+                    var data = new FormData();
+                    fileData = document.getElementById("fileUpload").files[0];
+
+                    $.ajax({
+                        url: 'http://localhost:8733/Design_Time_Addresses/ExcelManageITService/Service1/UploadFile?fileName=' + fileData.name, 
+                        type: 'POST',
+                        data: fileData,
+                        cache: false,
+                        processData: false, 
+                        contentType: "application/octet-stream", 
+                        success: function (data) {
+                            alert('Successful..');
+                        },
+                        error: function (data) {
+                            alert('Error Occurred');
+                        }
+                    });
+                });
+
+                // Download Button Click
+                $("#btnDownload").click(function () {
+                    window.location.href = "http://localhost:8733/Design_Time_Addresses/ExcelManageITService/Service1/template.csv"; // Make it dynamic according to your requirement.
+                });
+            });
+        </script>

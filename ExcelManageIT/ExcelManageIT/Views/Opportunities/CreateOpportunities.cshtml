@@ -1,0 +1,401 @@
+﻿@model ExcelManageIT.Models.Opportunity
+
+@{
+    ViewBag.Title = "Create Oppurtunies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <font size="6">Lead</font>
+                </div>
+            </div>
+@using (Html.BeginForm())
+{
+            <!--  ROW 1  -->
+            <hr />
+            <div class="row">
+                <div class="kendopanel col-sm-6">
+                    <ul class="panelbar">
+                        <li id="personalDetails" class="k-state-active">
+                            <span class="k-link k-state-selected">
+                                Company Details
+                            </span>
+                            <div id="leftDiv" class="form-horizontal form-widgets col-sm-12">
+                                <div class="form-group firstOfForm">
+                                    <label class="control-label col-sm-4" for="cname">Company Name</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("companyName")
+                              .HtmlAttributes(new { placeholder = "company name", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="cid">Company ID</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("companyID")
+                              .HtmlAttributes(new { placeholder = "company ID", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="enos">No of Employees</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("enos")
+                              .HtmlAttributes(new { placeholder = "Last name", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="arev">Annual Revenue</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().DropDownList()
+
+                                                        .Name("title")
+                                                        .DataTextField("Text")
+                                                        .DataValueField("Value")
+                                                        .Events(e => e.Change("change"))
+                                                        .BindTo(new List<SelectListItem>() {
+                                                            new SelectListItem() {
+                                                                Text = "Mr",
+                                                                Value = "1"
+                                                            },
+                                                            new SelectListItem() {
+                                                                Text = "Mrs",
+                                                                Value = "2"
+                                                            },
+                                                             new SelectListItem() {
+                                                                Text = "Miss",
+                                                                Value = "3"
+                                                            },
+
+                                                            })
+                                                            .Value("1")
+                                                           .HtmlAttributes(new { style = "width: 220px" })
+                                        )
+                                      
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="gender">Gender</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        
+
+                                           @(Html.Kendo().DropDownList()
+
+                                                        .Name("gender")
+                                                        .DataTextField("Text")
+                                                        .DataValueField("Value")
+                                                        .Events(e => e.Change("change"))
+                                                        .BindTo(new List<SelectListItem>() {
+                                                            new SelectListItem() {
+                                                                Text = "Male",
+                                                                Value = "1"
+                                                            },
+                                                            new SelectListItem() {
+                                                                Text = "Female",
+                                                                Value = "2"
+                                                            },
+
+                                                            })
+                                                            .Value("1")
+                                                           .HtmlAttributes(new { style = "width: 220px"})
+                                                           )
+                                     
+                                          
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="cname">Company Name</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("arev")
+                              .HtmlAttributes(new { placeholder = "Annual Revenue'", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                                    </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="kendopanel col-sm-6">
+                    <ul class="panelbar">
+                        <li id="contactDetails" class="k-state-active">
+                            <span class="k-link k-state-selected">
+                                Contact Details
+                            </span>
+                            <div id="rightDiv" class="form-horizontal form-widgets col-sm-12">
+                                <div class="form-group firstOfForm">
+                                    <label class="control-label col-sm-4" for="fname">First Name</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("addLine1")
+                              .HtmlAttributes(new { placeholder = "address Line1", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="lname">Last Name</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("addLine2")
+                              .HtmlAttributes(new { placeholder = "address Line2", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                      
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="role">Role</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("role")
+                              .HtmlAttributes(new { placeholder = "role", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="email">Email ID</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("email")
+                              .HtmlAttributes(new { placeholder = "email", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+                                       
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="cnumber">Contact Number</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("cnumber")
+                              .HtmlAttributes(new { placeholder = "Enter a 8 digit number", pattern = "\\d{8}", required = "required", type = "tel", validationmessage = "Enter at least 8 digits", style = "width: 220px;" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="email">E-mail</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("email")
+                              .HtmlAttributes(new { placeholder = "e.g. name@example.com", required = "required", type = "email", data_email_msg = "Email format is not valid", style = "width: 220px;" })
+                                        )
+                                        
+                                    </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- End of ROW 1  -->
+            <!--  ROW 2 -->
+            <hr />
+            <div class="row">
+                <div class="kendopanel col-sm-6">
+                    <ul class="panelbar">
+                        <li id="opportunityDetails" class="k-state-active">
+                            <span class="k-link k-state-selected">
+                                Company Contact Info
+                            </span>
+                            <div id="leftDiv1" class="form-horizontal form-widgets col-sm-12">
+                                <div class="form-group firstOfForm">
+
+                                    <label class="control-label col-sm-4" for="address">Address</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("address")
+                              .HtmlAttributes(new { placeholder = "address", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="cphone">Company Phone</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("cphone")
+                              .HtmlAttributes(new { placeholder = "Company phone", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="status">fax</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                                            .Name("fax")
+                                  .HtmlAttributes(new { placeholder = "fax", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="site">Website</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("site")
+                              .HtmlAttributes(new { placeholder = "Description", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="cemail">Company Email</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("cemail")
+                              .HtmlAttributes(new { placeholder = "cemail", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                       
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="kendopanel col-sm-6">
+                    <ul class="panelbar">
+                        <li id="otherDetails" class="k-state-active">
+                            <span class="k-link k-state-selected">
+                                Lead Details
+                            </span>
+                            <div id="rightDiv1" class="form-horizontal form-widgets col-sm-12">
+                                <div class="form-group firstOfForm">
+                                    <label class="control-label col-sm-4" for="lowner">Lead Owner</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("lowner")
+                              .HtmlAttributes(new { placeholder = "Campaign Source", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="probability">Probability</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().NumericTextBox<double>()
+                                        .Name("probability")
+                                        .Format("p0")
+                                        .Min(.5)
+                                        .Max(1.0)
+                                        .Step(0.1)
+                                        .Value(0.50)
+                                        .HtmlAttributes(new { style = "width: 220px" })
+                                        )
+                                    
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="nextStep">Next Step</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("lstatus")
+                              .HtmlAttributes(new { placeholder = "Active", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                              
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="desc">Description</label>
+                                    <div class="col-sm-8 col-md-6">
+                                        @(Html.Kendo().TextBox()
+                              .Name("desc")
+                              .HtmlAttributes(new { placeholder = "lorem ipsum", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                        )
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--  End of ROW 2  -->
+            <!-- ROW 4 -->
+            <hr />
+            <div class="row">
+                <br />
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <center>
+                        @(Html.Kendo().Button()
+        .Name("opportunityRegister")
+        .HtmlAttributes(new { type = "button", style = "220px", @class = "k-button k-primary" })
+        .Content("Create Opportunity"))
+                       
+                    </center>
+                </div>
+            </div>
+}
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/kendo/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/kendo/kendo.all.min.js"></script>
+
+<script src="~/Scripts/jquery.metisMenu.js"></script>
+<script src="~/Scripts/app.js"></script>
+<script>
+    function change() {
+        var value = $("#gender").val();
+        $("#gender")
+                .toggleClass("Male", value == 1)
+                .toggleClass("Female", value == 2)
+
+        var value = $("#title").val();
+        $("#title")
+                .toggleClass("Mr", value == 1)
+                .toggleClass("Mrs", value == 2)
+                .toggleClass("Miss", value == 3)
+               
+    };
+    </script>
+
+<style>
+    #gender {
+        width: 242px;
+        height: 225px;
+        margin: 20px auto;
+       
+    }
+ 
+</style>
+<script>
+    $("#OpportunitiesLink").addClass("active-menu");
+</script>

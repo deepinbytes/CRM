@@ -1,0 +1,152 @@
+﻿@model ExcelManageIT.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Login to ExcelManageIT</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">*@
+    <link href="~/Content/login-form-elements.css" rel="stylesheet" />
+    <link href="~/Content/login_style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                @*<div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Bootstrap</strong> Login Form</h1>
+                            <div class="description">
+                                <p>
+                                    This is a free responsive login form made with Bootstrap.
+                                    Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+                                </p>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to ExcelManageIT</h3>
+                                @*<p>Enter your username and password to log on:</p>*@
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            @using (Html.BeginForm())
+                            {
+                                <div>
+                                    <fieldset>
+                                        <legend>Login</legend>
+                                        <center>
+                                            <table>
+                                                <tr>
+                                                    <td width="50%">
+                                                        <label for="UserId">User Name</label>
+                                                    </td>
+                                                    <td width="50%">
+                                                        @(Html.Kendo().TextBoxFor(u => u.UserId)
+                              .Name("UserId")
+          .HtmlAttributes(new { placeholder = "User name", required = "required", pattern = @"^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$", title = "User Name should not contain spaces and must be between 2 to 20 Characters", validationmessage = "Enter {0}" })
+                                                        )
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="Password">Password</label>
+                                                    </td>
+                                                    <td>
+                                                        @(Html.Kendo().TextBoxFor(u => u.Password)
+                              .Name("Password")
+                              .HtmlAttributes(new { placeholder = "Password", type = "password", required = "required", validationmessage = "Enter {0}" })
+                                                    )
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="Company">Company ID</label></td>
+                                                <td>
+                                                    @(Html.Kendo().TextBoxFor(u => u.Company)
+                              .Name("Company")
+                              .HtmlAttributes(new { placeholder = "Company ID", required = "required", validationmessage = "Enter {0}" })
+                                                )
+                                            </td>
+                                        </tr>
+                                        <tr><td colspan="2" align="center"><font color="red">@ViewBag.Error</font><br /><input type="submit" value="Log In"/></td></tr>
+                                    </table>
+                                    </center>
+                                    </fieldset>
+                                </div>
+                            }
+                            @*<form role="form" action="" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Username</label>
+                                        @(Html.Kendo().TextBox()
+                                  .Name("Username")
+                                  .HtmlAttributes(new { placeholder = "User name", required = "required", validationmessage = "Enter {0}" })
+                                        )
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                      @(Html.Kendo().TextBox()
+                                  .Name("Password")
+                                  .HtmlAttributes(new { placeholder = "Password", type="password", required = "required", validationmessage = "Enter {0}"})
+                                    )
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Company ID</label>
+                                        @(Html.Kendo().TextBox()
+                                  .Name("CompanyID")
+                                  .HtmlAttributes(new { placeholder = "Company ID", required = "required", validationmessage = "Enter {0}"})
+                                        )
+                                    </div>
+                                    @(Html.Kendo().Button()
+                                    .Name("Submit")
+                                    .HtmlAttributes(new{ value="Submit", type="submit"})
+                                    .Content("Submit")
+                                    )
+                                </form>*@
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                            <h3>...or login with:</h3>
+                            <div class="social-login-buttons">
+                                <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                                <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </a>
+                                <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                    <i class="fa fa-google-plus"></i> Google Plus
+                                </a>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Javascript -->
+    <script src="~/Scripts/kendo/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.backstretch.min.js"></script>
+    <script src="~/Scripts/loginScripts.js"></script>
+
+</body>
+</html>

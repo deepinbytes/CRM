@@ -1,0 +1,163 @@
+﻿@model ExcelManageIT.Models.Lead
+
+@{ViewBag.Title = "ViewLead";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <font size="6">View Leads</font>
+                </div>
+            </div>
+            <!--  ROW 1  -->
+            <hr />
+
+            <div class="row">
+                @(Html.Kendo().Grid<ExcelManageIT.Models.Lead>()
+        .Name("grid")
+
+        .Columns(columns =>
+        {
+            // columns.Bound(c => c.ID);
+            columns.Bound(c => c.fname);
+            columns.Bound(c => c.email);
+            columns.Bound(c => c.lstatus);
+            columns.Bound(c => c.cphone);
+            columns.Command(command => command.Custom("ViewDetails").Click("showDetails")).Width(180);
+
+            columns.Bound(c => c.ID).ClientTemplate(@Html.ActionLink("ModifyLead", "ModifyLead", new { id = "#=ID#" }).ToHtmlString());
+            columns.Bound(c => c.ID).ClientTemplate(@Html.ActionLink("DeleteLead", "DeleteLead", new { id = "#=ID#" }).ToHtmlString());
+            //columns.Template(c => @Html.ActionLink("ModifyLead", "Lead", new { id = c.ID, }));
+            //columns.Bound(c => c.ID).ClientTemplate(@Html.RouteLink("ModifyLead", "Lead", new { id = "#=ID#" }).ToHtmlString());
+            //columns.Bound(c=> c.ID).ClientTemplate(
+            //  "<a href='" +
+            //    Url.Action("ModifyLead", "Lead") +
+            //    "/#= ID #'" +
+            // ">Modify Details</a>"
+            //   );
+        })
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("LeadGrid", "Lead"))
+            .PageSize(5)
+        )
+                )
+
+                @(Html.Kendo().Window().Name("Details")
+    .Title("Lead Details")
+    .Visible(false)
+    .Modal(true)
+    .Draggable(true)
+    .Width(300)
+                )
+
+
+            </div>
+
+            <!-- End of ROW 1  -->
+
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/kendo/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/kendo/kendo.all.min.js"></script>
+<script src="~/Scripts/jquery.metisMenu.js"></script>
+<script src="~/Scripts/app.js"></script>
+<script type="text/x-kendo-template" id="template">
+    <div id="details-container">
+        <h2>#= fname # #= email #</h2>
+        <em>Status: #= lstatus #</em>
+        <dl>
+            <dt>Number: #= cphone #</dt>
+            <dt>Description: #= desc #</dt>
+        </dl>
+    </div>
+</script>
+
+<script type="text/javascript">
+    var detailsTemplate = kendo.template($("#template").html());
+
+    function showDetails(e) {
+        e.preventDefault();
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        var wnd = $("#Details").data("kendoWindow");
+
+        wnd.content(detailsTemplate(dataItem));
+        wnd.center().open();
+    }
+
+
+function edit() {
+    var grid = $("#grid").data("kendoGrid");
+    var row = grid.select();
+    var dataItem = grid.dataItem(row);
+    var id = dataItem.ID;
+
+    windowlocation = '@Url.Action("ModifyLead","Lead")';
+}
+
+
+</script>
+
+<style type="text/css">
+    #details-container {
+        padding: 10px;
+    }
+
+        #details-container h2 {
+            margin: 0;
+        }
+
+        #details-container em {
+            color: #8c8c8c;
+        }
+
+        #details-container dt {
+            margin: 0;
+            display: inline;
+        }
+</style>
+<script>
+    function change() {
+        //var value = $("#gender").val();
+        //$("#gender")
+        //        .toggleClass("Male", value == 1)
+        //        .toggleClass("Female", value == 2)
+
+        //var value = $("#title").val();
+        //$("#title")
+        //        .toggleClass("Mr", value == 1)
+        //        .toggleClass("Mrs", value == 2)
+        //        .toggleClass("Miss", value == 3)
+
+    };
+</script>
+
+<style>
+    /*#gender {
+        width: 242px;
+        height: 225px;
+        margin: 20px auto;
+    }*/
+</style>
+<script>
+    $("#leadLink").addClass("active-menu");
+    $("#Leaduserlink").addClass("active-menu");
+</script>
+

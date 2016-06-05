@@ -1,0 +1,85 @@
+﻿@model ExcelManageIT.Models.User
+
+@{ViewBag.Title = "ViewUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <font size="6">View Users</font>
+                </div>
+            </div>
+            <!--  ROW 1  -->
+            <hr />
+           
+                <div class="row">
+                 @(Html.Kendo().Grid<ExcelManageIT.Models.User>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.UserId).ClientTemplate("<a href=/User/CreateUser?id=${UserId} target=_blank>${UserId}</a>").MinScreenWidth(150);
+            columns.Bound(c => c.FirstName);
+            columns.Bound(c => c.EmailId);
+            columns.Bound(c => c.Company);
+            columns.Bound(c => c.ContactNumber);
+        })
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("UsersList", "User"))
+            .PageSize(5)
+        )
+                )
+                </div>
+
+            <!-- End of ROW 1  -->
+           
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/kendo/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/kendo/kendo.all.min.js"></script>
+<script src="~/Scripts/jquery.metisMenu.js"></script>
+<script src="~/Scripts/app.js"></script>
+<script>
+    function change() {
+        //var value = $("#gender").val();
+        //$("#gender")
+        //        .toggleClass("Male", value == 1)
+        //        .toggleClass("Female", value == 2)
+
+        //var value = $("#title").val();
+        //$("#title")
+        //        .toggleClass("Mr", value == 1)
+        //        .toggleClass("Mrs", value == 2)
+        //        .toggleClass("Miss", value == 3)
+
+    };
+</script>
+
+<style>
+    /*#gender {
+        width: 242px;
+        height: 225px;
+        margin: 20px auto;
+    }*/
+</style>
+<script>
+    $("#userLink").addClass("active-menu");
+    $("#Viewuserlink").addClass("active-menu");
+</script>
+

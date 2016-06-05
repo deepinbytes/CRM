@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "displayLead";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>View Lead</h2>
+
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Leads
+                        </div>
+                        <div class="panel-body">
+                         @(Html.Kendo().Grid<ExcelManageIT.Models.Lead>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.cid).Filterable(false);
+        columns.Bound(p => p.fname);
+        columns.Bound(p => p.lname);
+        columns.Bound(p => p.email);
+        columns.Bound(p => p.cphone);
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("Leads_Grid", "Lead"))
+     )
+                        )
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            <!-- /. ROW  -->
+
+        </div>
+    <!-- /. PAGE INNER  -->
+</div>

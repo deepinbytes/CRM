@@ -1,0 +1,111 @@
+﻿@ViewBag.MyList;
+@{
+    ViewBag.Title = "View Opportunities";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <font size="6">Opportunity</font>
+                </div>
+            </div>
+            @(Html.Kendo().Grid((IEnumerable<ExcelManageIT.Models.Opportunity>)ViewBag.Mylist)
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.OpportunityID);
+        columns.Bound(c => c.Title);
+        columns.Bound(c => c.FirstName).Sortable(true);
+        columns.Bound(c => c.LastName);
+        columns.Bound(c => c.CompanyName);
+        columns.Bound(c => c.ContactNumber);
+        columns.Bound(c => c.NextStep);
+        columns.Bound(c => c.CreatedBy);
+        columns.Command(command => command.Custom("Edit").Action("CreateOpportunities", "Opportunities"));
+        columns.Template(c => Html.ActionLink("ModifyOpportunity", "Opportunities", new { id = c.OpportunityID }));
+
+    })
+    .HtmlAttributes(new { style = "height: 750px" })
+    .Scrollable()
+    .Groupable()
+    .Sortable()
+    .Pageable(pageable => pageable
+    .Refresh(true)
+    .PageSizes(true)
+    .PageSizes(new int[] { 3, 5, 10 })
+    .ButtonCount(5))
+
+
+
+
+
+            )
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/kendo/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/kendo/kendo.all.min.js"></script>
+
+<script src="~/Scripts/jquery.metisMenu.js"></script>
+<script src="~/Scripts/app.js"></script>
+
+
+<script>
+
+function edit() {
+    var grid = $("#grid").data("kendoGrid");
+    var row = grid.select();
+    var dataItem = grid.dataItem(row);
+    var id = dataItem.UserId;
+
+    windowlocation = '@Url.Action("CreateCustomers")';
+}
+</script>
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function() {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>
+
+<style>
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>

@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.kendopanel{
+     padding: 10px 20px 10px 20px;
+}
+.form-group{
+    text-align:center;
+}
+
+.firstOfForm{
+    padding-top:10px;
+}
+
+.formbox{
+    width:80%;
+}
+.grid-container{
+    padding:10px;
+}
+

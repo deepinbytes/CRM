@@ -1,0 +1,146 @@
+﻿@model ExcelManageIT.Models.Product
+
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <font size="6">Create Product</font>
+                </div>
+            </div>
+            <!--  ROW 1  -->
+            <hr />
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <div class="kendopanel col-sm-6">
+                        <ul class="panelbar">
+                            <li id="productDetails" class="k-state-active">
+                                <span class="k-link k-state-selected">
+                                    Product Details
+                                </span>
+                                <div id="leftDiv" class="form-horizontal form-widgets col-sm-12">
+                                    <div class="form-group firstOfForm">
+                                        <label class="control-label col-sm-4" for="ProductID">Product ID</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(p => p.ProductId)
+                              .Name("ProductID")
+      .HtmlAttributes(new { placeholder = "Product ID", pattern = @"^[a-zA-Z0-9][a-zA-Z0-9]{1,20}$", title = "Product ID should only be alpha-numeric and must be between 2 to 20 Characters", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="ProductName">Product Name</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(p => p.ProductName)
+.Name("ProductName")
+.HtmlAttributes(new { placeholder = "Product name", pattern = @"^[a-zA-Z][a-zA-Z0-9\s]{1,40}$", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="Description">Description</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(p => p.Description)
+                                        .Name("Description")
+                                        .HtmlAttributes(new { placeholder = "Description", pattern = @"^[a-zA-Z][a-zA-Z0-9\s]{1,100}$", title = "Description should be within 100 characters", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="Price">Price</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().NumericTextBoxFor(p => p.Price)
+                .Name("Price")
+                .Format("c")
+                .HtmlAttributes(new { placeholder = "Price", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="Threshold">Threshold</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().NumericTextBoxFor(p => p.Threshold)
+                .Name("Threshold")
+                .HtmlAttributes(new { placeholder = "Threshold", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+
+                                  @*<div class="form-group">
+                                        <label class="control-label col-sm-4" for="CreatedBy">Created By</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(p => p.CreatedBy)
+.Name("CreatedBy")
+.HtmlAttributes(new { placeholder = "Created by", pattern = @"^[a-zA-Z][a-zA-Z0-9\s]{1,40}$", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>*@  
+
+                                    @*<div class="form-group">
+                                        <label class="control-label col-sm-4" for="CreatedDate">CreatedDate</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().DateTimePickerFor(p => p.CreatedDate)
+                .Name("CreatedDate")
+                .Value(DateTime.Now)
+                .HtmlAttributes(new { placeholder = "CreatedDate", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>*@
+
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                        <!--  End of ROW 1  -->
+                        <!-- ROW 2 -->
+                        <hr />
+                        <div class="row">
+                            <br />
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <center>
+                                    <font color="red">@ViewBag.Error</font><br />
+                                    <font color="green">@ViewBag.Message</font><br />
+                                    <input type="submit" value="Create Product" class="k-button k-primary" />
+
+                                </center>
+                            </div>
+                        </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+<script src="~/Scripts/kendo/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/kendo/kendo.all.min.js"></script>
+
+<script src="~/Scripts/jquery.metisMenu.js"></script>
+<script src="~/Scripts/app.js"></script>
+<script>
+    function change() {
+        
+    };
+</script>
+
+
+
+<script>
+    $("#ProductLink").addClass("active-menu");
+    $("#CreateProductLink").addClass("active-menu");
+</script>

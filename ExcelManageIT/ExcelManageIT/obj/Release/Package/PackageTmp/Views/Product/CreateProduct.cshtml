@@ -1,0 +1,95 @@
+﻿@model ExcelManageIT.Models.User
+
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        <input class="themeChooser" value="default" />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <font size="6">Create Product</font>
+                </div>
+            </div>
+            <!--  ROW 1  -->
+            <hr />
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <div class="kendopanel col-sm-6">
+                        <ul class="panelbar">
+                            <li id="productDetails" class="k-state-active">
+                                <span class="k-link k-state-selected">
+                                    Product Details
+                                </span>
+                                <div id="leftDiv" class="form-horizontal form-widgets col-sm-12">
+                                    <div class="form-group firstOfForm">
+                                        <label class="control-label col-sm-4" for="productID">Product ID</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(p => p.ProductId)
+                              .Name("productID")
+      .HtmlAttributes(new { placeholder = "Product ID", pattern = @"^[a-zA-Z][a-zA-Z0-9]{1,20}$", title = "Product ID should only be alpha-numeric and must be between 2 to 20 Characters" , required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="FirstName">First Name</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(u => u.FirstName)
+.Name("FirstName")
+.HtmlAttributes(new { placeholder = "First name", required = "required", validationmessage = "Enter {0}", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="MiddleName">Middle Name</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(u => u.MiddleName)
+                                        .Name("MiddleName")
+                                        .HtmlAttributes(new { placeholder = "Middle name", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="LastName">Last Name</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().TextBoxFor(u => u.LastName)
+                .Name("LastName")
+                .HtmlAttributes(new { placeholder = "Last name", style = "width:220px" })
+                                            )
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="Gender">Gender</label>
+                                        <div class="col-sm-8 col-md-6">
+                                            @(Html.Kendo().DropDownListFor(u => u.Gender)
+
+                                .Name("Gender")
+                                                        .DataTextField("Text")
+                                                        .DataValueField("Value")
+                                                        .Events(e => e.Change("change"))
+                                                        .BindTo(new List<SelectListItem>() {
+                                                            new SelectListItem() {
+                                                                Text = "Male",
+                                                                Value = "Male"
+                                                            },
+                                                            new SelectListItem() {
+                                                                Text = "Female",
+                                                                Value = "Female"
+                                                            },
+
+                                                            })
+
+                                                           .HtmlAttributes(new { style = "width: 220px" })
+                                            )
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
