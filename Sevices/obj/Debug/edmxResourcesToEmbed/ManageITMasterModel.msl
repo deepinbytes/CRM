@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExcelManageITMasterModelStoreContainer" CdmEntityContainer="ExcelManageITMasterEntities">
+    <EntitySetMapping Name="ORGANIZATIONs">
+      <EntityTypeMapping TypeName="ExcelManageITMasterModel.ORGANIZATION">
+        <MappingFragment StoreEntitySet="ORGANIZATION">
+          <ScalarProperty Name="COMPANYID" ColumnName="COMPANYID" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="DATABASE" ColumnName="DATABASE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

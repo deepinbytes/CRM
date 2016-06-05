@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManageITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccessControl">
+    <Key>
+      <PropertyRef Name="AccessID" />
+    </Key>
+    <Property Name="AccessID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElementID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateFlag" Type="varchar" MaxLength="10" />
+    <Property Name="ReadFlag" Type="varchar" MaxLength="10" />
+    <Property Name="UpdateFlag" Type="varchar" MaxLength="10" />
+    <Property Name="DeleteFlag" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="campaign">
+    <Key>
+      <PropertyRef Name="campaignID" />
+    </Key>
+    <Property Name="campaignID" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CampaignName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CampaignOwner" Type="varchar" MaxLength="150" />
+    <Property Name="CampaignType" Type="varchar" MaxLength="150" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="Budget" Type="varchar" MaxLength="150" />
+    <Property Name="ActualCost" Type="varchar" MaxLength="150" />
+    <Property Name="ExpectedRevenue" Type="varchar" MaxLength="150" />
+    <Property Name="ExpectedResponse" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+    <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="150" />
+    <Property Name="State" Type="varchar" MaxLength="150" />
+    <Property Name="ZIP" Type="varchar" MaxLength="150" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Owner" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NextStep" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MainSource" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+    <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="150" />
+    <Property Name="State" Type="varchar" MaxLength="150" />
+    <Property Name="ZIP" Type="varchar" MaxLength="150" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Owner" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Revenue" Type="varchar" MaxLength="150" />
+    <Property Name="CampaignSource" Type="varchar" MaxLength="150" />
+    <Property Name="NumberOfOrders" Type="int" Nullable="false" />
+    <Property Name="NextStep" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MainSource" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EventName" Type="varchar" MaxLength="150" />
+    <Property Name="EventType" Type="varchar" MaxLength="150" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="EventOwner" Type="varchar" MaxLength="150" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="IsActive" Type="varchar" MaxLength="150" />
+    <Property Name="CampaignId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Leads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fname" Type="varchar(max)" Nullable="false" />
+    <Property Name="lname" Type="varchar(max)" Nullable="false" />
+    <Property Name="arev" Type="varchar" MaxLength="150" />
+    <Property Name="role" Type="varchar" MaxLength="150" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+    <Property Name="cnumber" Type="varchar" MaxLength="150" />
+    <Property Name="address" Type="varchar" MaxLength="150" />
+    <Property Name="cphone" Type="varchar" MaxLength="150" />
+    <Property Name="fax" Type="varchar" MaxLength="150" />
+    <Property Name="site" Type="varchar" MaxLength="150" />
+    <Property Name="cemail" Type="varchar" MaxLength="150" />
+    <Property Name="lowner" Type="varchar" MaxLength="150" />
+    <Property Name="lstatus" Type="varchar" MaxLength="150" />
+    <Property Name="description" Type="varchar" MaxLength="150" />
+    <Property Name="cid" Type="varchar" MaxLength="150" />
+    <Property Name="enos" Type="varchar" MaxLength="150" />
+    <Property Name="status" Type="varchar" MaxLength="150" />
+    <Property Name="cname" Type="varchar" MaxLength="150" />
+    <Property Name="Createdby" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Opportunity">
+    <Key>
+      <PropertyRef Name="OpportunityID" />
+    </Key>
+    <Property Name="OpportunityID" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+    <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="150" />
+    <Property Name="State" Type="varchar" MaxLength="150" />
+    <Property Name="ZIP" Type="varchar" MaxLength="150" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Owner" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+    <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Revenue" Type="varchar" MaxLength="150" />
+    <Property Name="CampaignSource" Type="varchar" MaxLength="150" />
+    <Property Name="Probability" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="NextStep" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MainSource" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Threshold" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UIElements">
+    <Key>
+      <PropertyRef Name="ElementID" />
+    </Key>
+    <Property Name="ElementID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ScreenName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="ElementName" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+    <Property Name="LastName" Type="varchar" MaxLength="150" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeeId" Type="varchar" MaxLength="150" />
+    <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+    <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="150" />
+    <Property Name="State" Type="varchar" MaxLength="150" />
+    <Property Name="ZIP" Type="varchar" MaxLength="150" />
+    <Property Name="ContactNumber" Type="varchar" MaxLength="150" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="150" />
+    <Property Name="Designation" Type="varchar" MaxLength="150" />
+    <Property Name="Company" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Theme" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="LastLogin" Type="date" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AccessCon__Creat__1A14E395">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="AccessControl" Type="Self.AccessControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AccessControl">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AccessCon__Eleme__1920BF5C">
+    <End Role="UIElements" Type="Self.UIElements" Multiplicity="1" />
+    <End Role="AccessControl" Type="Self.AccessControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UIElements">
+        <PropertyRef Name="ElementID" />
+      </Principal>
+      <Dependent Role="AccessControl">
+        <PropertyRef Name="ElementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AccessCon__RoleI__182C9B23">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="AccessControl" Type="Self.AccessControl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="AccessControl">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contact__Created__300424B4">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Create__21B6055D">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Opportuni__Creat__1ED998B2">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Opportunity">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Created__52593CB8">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__CreatedBy__1367E606">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User1" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleID__1273C1CD">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_campaign_user">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="campaign" Type="Self.campaign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="campaign">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Event" Type="Self.Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Leads_Leads">
+    <End Role="Leads" Type="Self.Leads" Multiplicity="1" />
+    <End Role="Leads1" Type="Self.Leads" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Leads">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Leads1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ManageITModelStoreContainer">
+    <EntitySet Name="AccessControl" EntityType="Self.AccessControl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="campaign" EntityType="Self.campaign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Leads" EntityType="Self.Leads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Opportunity" EntityType="Self.Opportunity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UIElements" EntityType="Self.UIElements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AccessCon__Creat__1A14E395" Association="Self.FK__AccessCon__Creat__1A14E395">
+      <End Role="User" EntitySet="User" />
+      <End Role="AccessControl" EntitySet="AccessControl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AccessCon__Eleme__1920BF5C" Association="Self.FK__AccessCon__Eleme__1920BF5C">
+      <End Role="UIElements" EntitySet="UIElements" />
+      <End Role="AccessControl" EntitySet="AccessControl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AccessCon__RoleI__182C9B23" Association="Self.FK__AccessCon__RoleI__182C9B23">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="AccessControl" EntitySet="AccessControl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contact__Created__300424B4" Association="Self.FK__Contact__Created__300424B4">
+      <End Role="User" EntitySet="User" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Create__21B6055D" Association="Self.FK__Customer__Create__21B6055D">
+      <End Role="User" EntitySet="User" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Opportuni__Creat__1ED998B2" Association="Self.FK__Opportuni__Creat__1ED998B2">
+      <End Role="User" EntitySet="User" />
+      <End Role="Opportunity" EntitySet="Opportunity" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Created__52593CB8" Association="Self.FK__Product__Created__52593CB8">
+      <End Role="User" EntitySet="User" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__CreatedBy__1367E606" Association="Self.FK__User__CreatedBy__1367E606">
+      <End Role="User" EntitySet="User" />
+      <End Role="User1" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleID__1273C1CD" Association="Self.FK__User__RoleID__1273C1CD">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_campaign_user" Association="Self.FK_campaign_user">
+      <End Role="User" EntitySet="User" />
+      <End Role="campaign" EntitySet="campaign" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_User" Association="Self.FK_Event_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Event" EntitySet="Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Leads_Leads" Association="Self.FK_Leads_Leads">
+      <End Role="Leads" EntitySet="Leads" />
+      <End Role="Leads1" EntitySet="Leads" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,14 @@
+d:\ecelforte\ExcelManageITService\bin\Debug\ExcelManageITService.dll.config
+d:\ecelforte\ExcelManageITService\bin\Debug\ExcelManageITService.dll
+d:\ecelforte\ExcelManageITService\bin\Debug\ExcelManageITService.pdb
+d:\ecelforte\ExcelManageITService\bin\Debug\EntityFramework.dll
+d:\ecelforte\ExcelManageITService\bin\Debug\EntityFramework.SqlServer.dll
+d:\ecelforte\ExcelManageITService\bin\Debug\FileHelpers.dll
+d:\ecelforte\ExcelManageITService\bin\Debug\Newtonsoft.Json.dll
+d:\ecelforte\ExcelManageITService\bin\Debug\EntityFramework.xml
+d:\ecelforte\ExcelManageITService\bin\Debug\EntityFramework.SqlServer.xml
+d:\ecelforte\ExcelManageITService\bin\Debug\FileHelpers.xml
+d:\ecelforte\ExcelManageITService\bin\Debug\Newtonsoft.Json.xml
+d:\ecelforte\ExcelManageITService\obj\Debug\ExcelManageITService.csprojResolveAssemblyReference.cache
+d:\ecelforte\ExcelManageITService\obj\Debug\ExcelManageITService.dll
+d:\ecelforte\ExcelManageITService\obj\Debug\ExcelManageITService.pdb

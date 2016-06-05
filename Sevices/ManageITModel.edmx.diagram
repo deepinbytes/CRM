@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f038c3e06cb4a39bd52f3e41cc62ff1" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="ManageITModel.AccessControl" Width="1.5" PointX="8.25" PointY="15.5" />
+        <EntityTypeShape EntityType="ManageITModel.Contact" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="ManageITModel.Customer" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="ManageITModel.Lead" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ManageITModel.Opportunity" Width="1.5" PointX="5.25" PointY="22" />
+        <EntityTypeShape EntityType="ManageITModel.Role" Width="1.5" PointX="0.75" PointY="12.875" />
+        <EntityTypeShape EntityType="ManageITModel.UIElement" Width="1.5" PointX="6" PointY="5.375" />
+        <EntityTypeShape EntityType="ManageITModel.User" Width="1.5" PointX="3" PointY="14.875" />
+        <AssociationConnector Association="ManageITModel.FK__AccessCon__Creat__1A14E395" />
+        <AssociationConnector Association="ManageITModel.FK__AccessCon__Eleme__1920BF5C" />
+        <AssociationConnector Association="ManageITModel.FK__AccessCon__RoleI__182C9B23" />
+        <AssociationConnector Association="ManageITModel.FK__Contact__Created__300424B4" />
+        <AssociationConnector Association="ManageITModel.FK__Customer__Create__21B6055D" />
+        <AssociationConnector Association="ManageITModel.FK_Leads_Leads" />
+        <AssociationConnector Association="ManageITModel.FK__Opportuni__Creat__1ED998B2" />
+        <AssociationConnector Association="ManageITModel.FK__User__RoleID__1273C1CD" />
+        <AssociationConnector Association="ManageITModel.FK__User__CreatedBy__1367E606" />
+        <EntityTypeShape EntityType="ManageITModel.campaign" Width="1.5" PointX="5.25" PointY="29.875" />
+        <EntityTypeShape EntityType="ManageITModel.Event" Width="1.5" PointX="5.25" PointY="0.875" />
+        <EntityTypeShape EntityType="ManageITModel.Product" Width="1.5" PointX="5.25" PointY="34.5" />
+        <AssociationConnector Association="ManageITModel.FK_campaign_user" />
+        <AssociationConnector Association="ManageITModel.FK_Event_User" />
+        <AssociationConnector Association="ManageITModel.FK__Product__Created__52593CB8" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

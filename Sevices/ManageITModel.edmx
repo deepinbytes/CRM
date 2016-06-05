@@ -1,0 +1,1164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ManageITModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccessControl">
+          <Key>
+            <PropertyRef Name="AccessID" />
+          </Key>
+          <Property Name="AccessID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ElementID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateFlag" Type="varchar" MaxLength="10" />
+          <Property Name="ReadFlag" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateFlag" Type="varchar" MaxLength="10" />
+          <Property Name="DeleteFlag" Type="varchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="IsActive" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="campaign">
+          <Key>
+            <PropertyRef Name="campaignID" />
+          </Key>
+          <Property Name="campaignID" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CampaignName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CampaignOwner" Type="varchar" MaxLength="150" />
+          <Property Name="CampaignType" Type="varchar" MaxLength="150" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Budget" Type="varchar" MaxLength="150" />
+          <Property Name="ActualCost" Type="varchar" MaxLength="150" />
+          <Property Name="ExpectedRevenue" Type="varchar" MaxLength="150" />
+          <Property Name="ExpectedResponse" Type="varchar" MaxLength="150" />
+          <Property Name="IsActive" Type="varchar" MaxLength="150" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+          <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="150" />
+          <Property Name="State" Type="varchar" MaxLength="150" />
+          <Property Name="ZIP" Type="varchar" MaxLength="150" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Owner" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+          <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NextStep" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MainSource" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+          <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="150" />
+          <Property Name="State" Type="varchar" MaxLength="150" />
+          <Property Name="ZIP" Type="varchar" MaxLength="150" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Owner" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+          <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Revenue" Type="varchar" MaxLength="150" />
+          <Property Name="CampaignSource" Type="varchar" MaxLength="150" />
+          <Property Name="NumberOfOrders" Type="int" Nullable="false" />
+          <Property Name="NextStep" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MainSource" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="150" />
+          <Property Name="EventType" Type="varchar" MaxLength="150" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="EventOwner" Type="varchar" MaxLength="150" />
+          <Property Name="Status" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="IsActive" Type="varchar" MaxLength="150" />
+          <Property Name="CampaignId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Leads">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fname" Type="varchar(max)" Nullable="false" />
+          <Property Name="lname" Type="varchar(max)" Nullable="false" />
+          <Property Name="arev" Type="varchar" MaxLength="150" />
+          <Property Name="role" Type="varchar" MaxLength="150" />
+          <Property Name="email" Type="varchar" MaxLength="150" />
+          <Property Name="cnumber" Type="varchar" MaxLength="150" />
+          <Property Name="address" Type="varchar" MaxLength="150" />
+          <Property Name="cphone" Type="varchar" MaxLength="150" />
+          <Property Name="fax" Type="varchar" MaxLength="150" />
+          <Property Name="site" Type="varchar" MaxLength="150" />
+          <Property Name="cemail" Type="varchar" MaxLength="150" />
+          <Property Name="lowner" Type="varchar" MaxLength="150" />
+          <Property Name="lstatus" Type="varchar" MaxLength="150" />
+          <Property Name="description" Type="varchar" MaxLength="150" />
+          <Property Name="cid" Type="varchar" MaxLength="150" />
+          <Property Name="enos" Type="varchar" MaxLength="150" />
+          <Property Name="status" Type="varchar" MaxLength="150" />
+          <Property Name="cname" Type="varchar" MaxLength="150" />
+          <Property Name="Createdby" Type="varchar" MaxLength="150" />
+          <Property Name="CreatedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Opportunity">
+          <Key>
+            <PropertyRef Name="OpportunityID" />
+          </Key>
+          <Property Name="OpportunityID" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+          <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="150" />
+          <Property Name="State" Type="varchar" MaxLength="150" />
+          <Property Name="ZIP" Type="varchar" MaxLength="150" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Owner" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+          <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Revenue" Type="varchar" MaxLength="150" />
+          <Property Name="CampaignSource" Type="varchar" MaxLength="150" />
+          <Property Name="Probability" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="NextStep" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MainSource" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Threshold" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="IsActive" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="IsActive" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UIElements">
+          <Key>
+            <PropertyRef Name="ElementID" />
+          </Key>
+          <Property Name="ElementID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ScreenName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ElementName" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeId" Type="varchar" MaxLength="150" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="250" />
+          <Property Name="AddressLine2" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="150" />
+          <Property Name="State" Type="varchar" MaxLength="150" />
+          <Property Name="ZIP" Type="varchar" MaxLength="150" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="150" />
+          <Property Name="EmailId" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="150" />
+          <Property Name="Designation" Type="varchar" MaxLength="150" />
+          <Property Name="Company" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Theme" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="IsActive" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="LastLogin" Type="date" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__AccessCon__Creat__1A14E395">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="AccessControl" Type="Self.AccessControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="AccessControl">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AccessCon__Eleme__1920BF5C">
+          <End Role="UIElements" Type="Self.UIElements" Multiplicity="1" />
+          <End Role="AccessControl" Type="Self.AccessControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UIElements">
+              <PropertyRef Name="ElementID" />
+            </Principal>
+            <Dependent Role="AccessControl">
+              <PropertyRef Name="ElementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AccessCon__RoleI__182C9B23">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="AccessControl" Type="Self.AccessControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="AccessControl">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contact__Created__300424B4">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__Create__21B6055D">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opportuni__Creat__1ED998B2">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Created__52593CB8">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__CreatedBy__1367E606">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__RoleID__1273C1CD">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_campaign_user">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="campaign" Type="Self.campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="campaign">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Leads_Leads">
+          <End Role="Leads" Type="Self.Leads" Multiplicity="1" />
+          <End Role="Leads1" Type="Self.Leads" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Leads">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Leads1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ManageITModelStoreContainer">
+          <EntitySet Name="AccessControl" EntityType="Self.AccessControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="campaign" EntityType="Self.campaign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leads" EntityType="Self.Leads" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opportunity" EntityType="Self.Opportunity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UIElements" EntityType="Self.UIElements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AccessCon__Creat__1A14E395" Association="Self.FK__AccessCon__Creat__1A14E395">
+            <End Role="User" EntitySet="User" />
+            <End Role="AccessControl" EntitySet="AccessControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AccessCon__Eleme__1920BF5C" Association="Self.FK__AccessCon__Eleme__1920BF5C">
+            <End Role="UIElements" EntitySet="UIElements" />
+            <End Role="AccessControl" EntitySet="AccessControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AccessCon__RoleI__182C9B23" Association="Self.FK__AccessCon__RoleI__182C9B23">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="AccessControl" EntitySet="AccessControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contact__Created__300424B4" Association="Self.FK__Contact__Created__300424B4">
+            <End Role="User" EntitySet="User" />
+            <End Role="Contact" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__Create__21B6055D" Association="Self.FK__Customer__Create__21B6055D">
+            <End Role="User" EntitySet="User" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opportuni__Creat__1ED998B2" Association="Self.FK__Opportuni__Creat__1ED998B2">
+            <End Role="User" EntitySet="User" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Created__52593CB8" Association="Self.FK__Product__Created__52593CB8">
+            <End Role="User" EntitySet="User" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__CreatedBy__1367E606" Association="Self.FK__User__CreatedBy__1367E606">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__RoleID__1273C1CD" Association="Self.FK__User__RoleID__1273C1CD">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_campaign_user" Association="Self.FK_campaign_user">
+            <End Role="User" EntitySet="User" />
+            <End Role="campaign" EntitySet="campaign" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User" Association="Self.FK_Event_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Event" EntitySet="Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Leads_Leads" Association="Self.FK_Leads_Leads">
+            <End Role="Leads" EntitySet="Leads" />
+            <End Role="Leads1" EntitySet="Leads" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManageITModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ManageITDemoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccessControls" EntityType="ManageITModel.AccessControl" />
+          <EntitySet Name="Contacts" EntityType="ManageITModel.Contact" />
+          <EntitySet Name="Customers" EntityType="ManageITModel.Customer" />
+          <EntitySet Name="Leads" EntityType="ManageITModel.Lead" />
+          <EntitySet Name="Opportunities" EntityType="ManageITModel.Opportunity" />
+          <EntitySet Name="Roles" EntityType="ManageITModel.Role" />
+          <EntitySet Name="UIElements" EntityType="ManageITModel.UIElement" />
+          <EntitySet Name="Users" EntityType="ManageITModel.User" />
+          <AssociationSet Name="FK__AccessCon__Creat__1A14E395" Association="ManageITModel.FK__AccessCon__Creat__1A14E395">
+            <End Role="User" EntitySet="Users" />
+            <End Role="AccessControl" EntitySet="AccessControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AccessCon__Eleme__1920BF5C" Association="ManageITModel.FK__AccessCon__Eleme__1920BF5C">
+            <End Role="UIElement" EntitySet="UIElements" />
+            <End Role="AccessControl" EntitySet="AccessControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AccessCon__RoleI__182C9B23" Association="ManageITModel.FK__AccessCon__RoleI__182C9B23">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="AccessControl" EntitySet="AccessControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contact__Created__300424B4" Association="ManageITModel.FK__Contact__Created__300424B4">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Contact" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer__Create__21B6055D" Association="ManageITModel.FK__Customer__Create__21B6055D">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Leads_Leads" Association="ManageITModel.FK_Leads_Leads">
+            <End Role="Lead" EntitySet="Leads" />
+            <End Role="Lead1" EntitySet="Leads" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opportuni__Creat__1ED998B2" Association="ManageITModel.FK__Opportuni__Creat__1ED998B2">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Opportunity" EntitySet="Opportunities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__RoleID__1273C1CD" Association="ManageITModel.FK__User__RoleID__1273C1CD">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__CreatedBy__1367E606" Association="ManageITModel.FK__User__CreatedBy__1367E606">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="campaigns" EntityType="ManageITModel.campaign" />
+          <EntitySet Name="Events" EntityType="ManageITModel.Event" />
+          <EntitySet Name="Products" EntityType="ManageITModel.Product" />
+          <AssociationSet Name="FK_campaign_user" Association="ManageITModel.FK_campaign_user">
+            <End Role="User" EntitySet="Users" />
+            <End Role="campaign" EntitySet="campaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Event_User" Association="ManageITModel.FK_Event_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Created__52593CB8" Association="ManageITModel.FK__Product__Created__52593CB8">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AccessControl">
+          <Key>
+            <PropertyRef Name="AccessID" />
+          </Key>
+          <Property Name="AccessID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ElementID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ReadFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DeleteFlag" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK__AccessCon__Creat__1A14E395" FromRole="AccessControl" ToRole="User" />
+          <NavigationProperty Name="UIElement" Relationship="ManageITModel.FK__AccessCon__Eleme__1920BF5C" FromRole="AccessControl" ToRole="UIElement" />
+          <NavigationProperty Name="Role" Relationship="ManageITModel.FK__AccessCon__RoleI__182C9B23" FromRole="AccessControl" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NextStep" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MainSource" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK__Contact__Created__300424B4" FromRole="Contact" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Revenue" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignSource" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfOrders" Type="Int32" Nullable="false" />
+          <Property Name="NextStep" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MainSource" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK__Customer__Create__21B6055D" FromRole="Customer" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Lead">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="arev" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="cnumber" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="cphone" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="fax" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="site" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="cemail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="lowner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="lstatus" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="cid" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="enos" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="cname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Createdby" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Leads1" Relationship="ManageITModel.FK_Leads_Leads" FromRole="Lead" ToRole="Lead1" />
+          <NavigationProperty Name="Lead1" Relationship="ManageITModel.FK_Leads_Leads" FromRole="Lead1" ToRole="Lead" />
+        </EntityType>
+        <EntityType Name="Opportunity">
+          <Key>
+            <PropertyRef Name="OpportunityID" />
+          </Key>
+          <Property Name="OpportunityID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Revenue" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignSource" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Probability" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NextStep" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MainSource" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK__Opportuni__Creat__1ED998B2" FromRole="Opportunity" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AccessControls" Relationship="ManageITModel.FK__AccessCon__RoleI__182C9B23" FromRole="Role" ToRole="AccessControl" />
+          <NavigationProperty Name="Users" Relationship="ManageITModel.FK__User__RoleID__1273C1CD" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UIElement">
+          <Key>
+            <PropertyRef Name="ElementID" />
+          </Key>
+          <Property Name="ElementID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScreenName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ElementName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AccessControls" Relationship="ManageITModel.FK__AccessCon__Eleme__1920BF5C" FromRole="UIElement" ToRole="AccessControl" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeId" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Theme" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastLogin" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AccessControls" Relationship="ManageITModel.FK__AccessCon__Creat__1A14E395" FromRole="User" ToRole="AccessControl" />
+          <NavigationProperty Name="Contacts" Relationship="ManageITModel.FK__Contact__Created__300424B4" FromRole="User" ToRole="Contact" />
+          <NavigationProperty Name="Customers" Relationship="ManageITModel.FK__Customer__Create__21B6055D" FromRole="User" ToRole="Customer" />
+          <NavigationProperty Name="Opportunities" Relationship="ManageITModel.FK__Opportuni__Creat__1ED998B2" FromRole="User" ToRole="Opportunity" />
+          <NavigationProperty Name="Role" Relationship="ManageITModel.FK__User__RoleID__1273C1CD" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="User1" Relationship="ManageITModel.FK__User__CreatedBy__1367E606" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User2" Relationship="ManageITModel.FK__User__CreatedBy__1367E606" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="campaigns" Relationship="ManageITModel.FK_campaign_user" FromRole="User" ToRole="campaign" />
+          <NavigationProperty Name="Events" Relationship="ManageITModel.FK_Event_User" FromRole="User" ToRole="Event" />
+          <NavigationProperty Name="Products" Relationship="ManageITModel.FK__Product__Created__52593CB8" FromRole="User" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__AccessCon__Creat__1A14E395">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.AccessControl" Role="AccessControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="AccessControl">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AccessCon__Eleme__1920BF5C">
+          <End Type="ManageITModel.UIElement" Role="UIElement" Multiplicity="1" />
+          <End Type="ManageITModel.AccessControl" Role="AccessControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UIElement">
+              <PropertyRef Name="ElementID" />
+            </Principal>
+            <Dependent Role="AccessControl">
+              <PropertyRef Name="ElementID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AccessCon__RoleI__182C9B23">
+          <End Type="ManageITModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="ManageITModel.AccessControl" Role="AccessControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="AccessControl">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contact__Created__300424B4">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.Contact" Role="Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Contact">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer__Create__21B6055D">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Leads_Leads">
+          <End Type="ManageITModel.Lead" Role="Lead" Multiplicity="1" />
+          <End Type="ManageITModel.Lead" Role="Lead1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Lead">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Lead1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opportuni__Creat__1ED998B2">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.Opportunity" Role="Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__RoleID__1273C1CD">
+          <End Type="ManageITModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="ManageITModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__CreatedBy__1367E606">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="campaign">
+          <Key>
+            <PropertyRef Name="campaignID" />
+          </Key>
+          <Property Name="campaignID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignOwner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignType" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Budget" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ActualCost" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ExpectedRevenue" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ExpectedResponse" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK_campaign_user" FromRole="campaign" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EventName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EventType" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="EventOwner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsActive" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CampaignId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK_Event_User" FromRole="Event" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Threshold" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="ManageITModel.FK__Product__Created__52593CB8" FromRole="Product" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_campaign_user">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.campaign" Role="campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="campaign">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Event_User">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Created__52593CB8">
+          <End Type="ManageITModel.User" Role="User" Multiplicity="1" />
+          <End Type="ManageITModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManageITModelStoreContainer" CdmEntityContainer="ManageITDemoEntities">
+          <EntitySetMapping Name="AccessControls">
+            <EntityTypeMapping TypeName="ManageITModel.AccessControl">
+              <MappingFragment StoreEntitySet="AccessControl">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="DeleteFlag" ColumnName="DeleteFlag" />
+                <ScalarProperty Name="UpdateFlag" ColumnName="UpdateFlag" />
+                <ScalarProperty Name="ReadFlag" ColumnName="ReadFlag" />
+                <ScalarProperty Name="CreateFlag" ColumnName="CreateFlag" />
+                <ScalarProperty Name="ElementID" ColumnName="ElementID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="AccessID" ColumnName="AccessID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="ManageITModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="MainSource" ColumnName="MainSource" />
+                <ScalarProperty Name="NextStep" ColumnName="NextStep" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ManageITModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="MainSource" ColumnName="MainSource" />
+                <ScalarProperty Name="NextStep" ColumnName="NextStep" />
+                <ScalarProperty Name="NumberOfOrders" ColumnName="NumberOfOrders" />
+                <ScalarProperty Name="CampaignSource" ColumnName="CampaignSource" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leads">
+            <EntityTypeMapping TypeName="ManageITModel.Lead">
+              <MappingFragment StoreEntitySet="Leads">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="enos" ColumnName="enos" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="lstatus" ColumnName="lstatus" />
+                <ScalarProperty Name="lowner" ColumnName="lowner" />
+                <ScalarProperty Name="cemail" ColumnName="cemail" />
+                <ScalarProperty Name="site" ColumnName="site" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="cphone" ColumnName="cphone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="cnumber" ColumnName="cnumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="arev" ColumnName="arev" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opportunities">
+            <EntityTypeMapping TypeName="ManageITModel.Opportunity">
+              <MappingFragment StoreEntitySet="Opportunity">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="MainSource" ColumnName="MainSource" />
+                <ScalarProperty Name="NextStep" ColumnName="NextStep" />
+                <ScalarProperty Name="Probability" ColumnName="Probability" />
+                <ScalarProperty Name="CampaignSource" ColumnName="CampaignSource" />
+                <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="OpportunityID" ColumnName="OpportunityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="ManageITModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UIElements">
+            <EntityTypeMapping TypeName="ManageITModel.UIElement">
+              <MappingFragment StoreEntitySet="UIElements">
+                <ScalarProperty Name="ElementName" ColumnName="ElementName" />
+                <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+                <ScalarProperty Name="ElementID" ColumnName="ElementID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ManageITModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="campaigns">
+            <EntityTypeMapping TypeName="ManageITModel.campaign">
+              <MappingFragment StoreEntitySet="campaign">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ExpectedResponse" ColumnName="ExpectedResponse" />
+                <ScalarProperty Name="ExpectedRevenue" ColumnName="ExpectedRevenue" />
+                <ScalarProperty Name="ActualCost" ColumnName="ActualCost" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CampaignType" ColumnName="CampaignType" />
+                <ScalarProperty Name="CampaignOwner" ColumnName="CampaignOwner" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="campaignID" ColumnName="campaignID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="ManageITModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EventOwner" ColumnName="EventOwner" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EventType" ColumnName="EventType" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="ManageITModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
